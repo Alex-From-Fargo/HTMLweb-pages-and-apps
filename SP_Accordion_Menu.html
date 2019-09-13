@@ -1,0 +1,155 @@
+<div id="SPaccordion">
+	<nav>
+      <ul id="nav2">
+        <li><a href="#"><center><span style="font-size:20px;">Menu Title</span></center></a>
+          <ul>
+			<li style="list-style-type: none;margin: 0; padding: 0;"><a href="javascript:ModalForm();">New Form Modal Dialog Command</a></li>
+			<li style="list-style-type: none;margin: 0; padding: 0;"><a href="https://sharepoint.dbi.local/Benefit_Services/Part_Services/PS2K19/SitePages/My%20Scheduling%20Requests.aspx">View my requests</a></li>
+			<li style="list-style-type: none;margin: 0; padding: 0;"><a href="http://www.google.com" target="_blank">View Google/Basic "a" tag functionality</a></li>
+		  </ul>
+		</li>
+	  </ul>
+	</nav>
+</div>
+	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+   <!-- <script type="text/javascript" language="javascript" charset="utf-8" src="nav.js"></script> -->
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<script>
+  $(document).ready(function(){
+  $("#nav2 > li > a").on("click", function(e){
+    if($(this).parent().has("ul")) {
+      e.preventDefault();
+    }
+    
+    if(!$(this).hasClass("open")) {
+      // hide any open menus and remove all other classes. You will notice a "nav1" listed below that is not mentioned anywhere else in this code. If you want to make more than one of these accordian menus, assign simple ID's to the ul tag in each div element (like, "nav1", "nav2", "nav3", etc.). For however many menus you create, copy the slideUp and removeClass lines of code below, and replace the id's with the id's of your new menu ul. This way, if you have multiple menus on one page, this ensures that all other menus will also collapse when clicking on a new item. This ensures a better looking aesthetic for your SharePoint page.
+      $("#nav1 li ul").slideUp(350);
+      $("#nav1 li a").removeClass("open");
+	  $("#nav2 li ul").slideUp(350);
+      $("#nav2 li a").removeClass("open");
+      
+      // open our new menu and add the open class
+      $(this).next("ul").slideDown(350);
+      $(this).addClass("open");
+    }
+    
+    else if($(this).hasClass("open")) {
+      $(this).removeClass("open");
+      $(this).next("ul").slideUp(350);
+    }
+  });
+});
+
+//the function below can be updated with the newform URL of your SharePoint list using SharePoint's own ModalDialog funtions
+
+function ModalForm() {
+	SP.UI.ModalDialog.showModalDialog({
+		url: // add the newform URL from your SP List in quotation marks,
+		title: //add a title to show on the modal dialogue window,
+		allowMaximize: true,
+		showClose: true,
+		//adjust width and height of modal window below
+		width: 925,
+		height: 675,
+		dialogReturnValueCallback: newCallback
+		});
+}
+function newCallback(dialogResult, returnValue) { 
+       SP.UI.ModalDialog.RefreshPage(SP.UI.DialogResult.OK); 
+}
+
+</script>
+
+<style>
+
+/* ACCORDIAN MENU STYLE CSS IS BELOW -- EDIT TO MAKE IT WORK BEST FOR YOU */
+
+ ol, ul, li {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+menu, nav, section { display: block;list-style-type: none;  }
+ol, ul { }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; } 
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+h1 { font-family: 'Bookman'; font-size: 3.25em; line-height: 1.7em; margin-bottom: 20px; font-weight: normal; letter-spacing: -0.03em; color: white; text-shadow: 2px 2px 0px rgba(255,255,255,0.65); text-align: left; }
+
+
+#SPaccordion { display: block; width: 480px; margin: 0 auto; padding-top: 45px; }
+
+
+#nav2 { 
+  display: block; 
+  width: 270px; 
+  margin: 0 auto; 
+  font-family: 'Segoe UI';
+  font-size: 16px;
+  -webkit-box-shadow: 3px 2px 3px rgba(0,0,0,0);
+  -moz-box-shadow: 3px 2px 3px rgba(0,0,0,0);
+  box-shadow: 3px 2px 3px rgba(0,0,0,0);
+}
+
+#nav2 li { list-style-type: none; }
+
+#nav2 > li > a { 
+  display: block; 
+  padding: 16px 18px;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+  list-style-type: none;
+  text-decoration: none;
+  border-bottom: 1px solid #0f2d52;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0f2d52), to(#0f2d52));
+  background: -webkit-linear-gradient(top, #0f2d52, #0f2d52);
+  background: -moz-linear-gradient(top, #0f2d52, #0f2d52);
+  background: -ms-linear-gradient(top, #0f2d52, #0f2d52);
+  background: -o-linear-gradient(top, #0f2d52, #0f2d52);
+  background: linear-gradient(top, #0f2d52, #0f2d52);
+}
+#nav2 > li > a:hover, #nav > li > a.open { 
+  color: #e9e9e9;
+  border-bottom-color: #384f76;
+  background-color: #b30d29;
+  list-style-type: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#8796a9), to(#8796a9));
+  background: -webkit-linear-gradient(top, #8796a9, #8796a9);
+  background: -moz-linear-gradient(top, #8796a9, #8796a9);
+  background: -ms-linear-gradient(top, #8796a9, #8796a9);
+  background: -o-linear-gradient(top, #8796a9, #8796a9);
+  background: linear-gradient(top, #8796a9, #8796a9);
+}
+
+#nav2 li ul { display: none; background: #0f2d52; list-style-type: none; }
+
+#nav2 li ul li a { 
+  display: block; 
+  background: none;
+  padding: 10px 0px;
+  padding-left: 30px;
+  font-size: 1.1em;
+  text-decoration: none;
+  list-style-type: none;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 0px #000;
+}
+#nav2 li ul li a:hover {
+  background: #8796a9;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px #000;
+}
+</style>
