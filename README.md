@@ -1,2 +1,2 @@
-# HTMLweb-pages-and-apps
-A repository to showcase what I can do
+# SharePoint Tips and Tricks
+A repository to showcase what is capable in SharePoint with just a few snippets of code
