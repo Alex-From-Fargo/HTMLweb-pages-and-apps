@@ -1,0 +1,32 @@
+<style type="text/css">
+	.ms-core-brandingText {
+		display: none;
+	}
+	.ms-core-navigation {
+		display:none;
+	}
+	.ms-descriptiontext {
+		display:none
+	}
+	#suiteBarLeft .ms-tableCell:before {
+		content: /*Type what you want to have the banner say here within apostrophes. For example, 'Accounts Payable', 'Human Resources', 'Customer Service', etc.*/;
+		font-size: /*Type your font size*/;
+		font-family: /*Insert font family here within quotation marks*/;
+		font-weight: /*Type either normal or bold for the weight*/;
+		font-style: /*Type either normal or italic for the weight*/;
+		padding-left: 60px;
+	}
+	#suiteBarLeft {
+		background-color: /*Type either the hex or rgb values to set the color of your Suite Bars (The "Top" row of a SP 2013 Team Site)*/
+	}
+	#suiteBarRight {
+		background-color: /*Type either the hex or rgb values to set the color of your Suite Bars (The "Top" row of a SP 2013 Team Site)*/
+
+	}
+	.ms-core-suiteLink-a:hover {
+		background-color: /*Type either the hex or rgb values to set the color of your Suite Links and NavBox (The "Bottom" row of a SP 2013 Team Site)*/
+	}
+	#globalNavBox, .ms-clientcontrol-chromeheader {
+		background-color: /*Type either the hex or rgb values to set the color of your Suite Links and NavBox (The "Bottom" row of a SP 2013 Team Site)*/
+	}
+</style>
