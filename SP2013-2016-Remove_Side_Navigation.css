@@ -1,0 +1,16 @@
+<style type="text/css">
+/*GREAT WAY TO REMOVE THE SIDE NAVIGATION BOX ON THE LEFT OF SHAREPOINT'S TEAM SITE PAGES IN ORDER BETTER CONTROL SITE NAVIGATION. REMOVES THE NAVIGATION BOX AND LEAVES A 30PX MARGIN TO THE LEFT.*/
+#sideNavBox {
+display: none;
+}
+#contentBox {
+margin-left: 30px;
+margin-top: 20px;
+background-image: none !important;
+}
+.ms-fullscreenmode #contentBox
+{
+margin-left: 30px;
+margin-top: 0px;
+}
+</style>
