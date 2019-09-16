@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--BELOW IS SOME SIMPLE CODE THAT WILL HELP SHAREPOINT PAGES REFRESH AUTOMATICALLY.
+THIS IS GREAT IF YOU HAVE A SHAREPOINT LIST THAT RECEIVES MULTIPLE SUBMISSIONS PER DAY, AND YOU WANT TO VIEW THE SUBMISSIONS IN REAL TIME.
+THE HTML PIECE IS FOR INTERNET EXPLORER, AND JAVASCRIPT YOU SEE IS FOR WHEN PAGES ARE IN GOOGLE CHROME.
+THIS CODE HAS NOT BEEN TESTED ON ANY OTHER BROWSERS BEYOND INTERNET EXPLORER AND GOOGLE CHROME-->
+<html>
+<head>
+<!--Works in IE11-->
+<meta http-equiv="refresh" content="120" />
+</head>
+</html>
+
+<script type=”text/javascript”>
+/*Works in Google Chrome*/
+$(function () {
+setInterval(refreshmyWebPart, 120000);
+});
+function refreshmyWebPart(){
+$(“#WebPartWPQ2 iframe”).attr(“src”,$(“#WebPartWPQ2 iframe”).attr(“src”));
+}
+</script>
