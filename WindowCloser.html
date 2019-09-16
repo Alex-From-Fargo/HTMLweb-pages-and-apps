@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<!--THE CODE BELOW CAN BE EMBEDDED WITHIN A SHAREPOINT PAGE, WHERE ONCE LOADED, IT WILL CLOSE THE WINDOW OR PAGE TAB AUTOMATICALLY. IF THE COMMAND FAILS FOR ANY REASON, THE PAGE WILL DISPLAY THE TEXT "Thank you! If this window doesn't close on its own, please close this window." TO INDICATE TO END USERS THAT NOTHING FURTHER IS NEEDED BEYOND CLOSING THE WINDOW.
+
+THE RECOMMENDED USE OF THIS WOULD BE TO HAVE THE SHAREPOINT PAGE WHERE THE CODE IS EMBEDDED BE THE SOURCE URL ON A SHAREPOINT LIST FORM. FOR EXAMPLE, AGENTS CAN CLICK THE SP LIST'S MODIFIED NEWFORM URL WITH THE CODE-EMBEDDED SP PAGE LISTED AT THE SOURCE URL, THE AGENT THEN COMPLETES THEIR SUBMISSION, BUT THEN ONCE SUBMITTED THEY ARE ROUTED TO THIS SCRIPT, AND IT SIMPLY CLOSES THEIR WINDOW INSTEAD OF DIRECTING THEM TO THE LIST ITSELF.
+
+FONT STYLES, SIZES, COLORS, AND OTHER ATTRIBUTES ARE LISTED WITH THE "H" AND "SPAN" TAGS BELOW. FEEL FREE TO MODIFY TO FIT YOUR ENVIRONMENT/BRANDING-->
+
+<HTML> 
+<script type="text/javascript">
+function closemyself() {
+ window.opener=self;
+ window.close();
+ //self.close();
+}
+</script>
+
+<BODY onLoad="setTimeout('closemyself()',500);" >
+
+<h style="font-family:Tahoma;font-size:86pt;text-align:center"><center><span style="color:#0f2d52">Thank you!</span></center></h>
+
+<h style="font-family:Tahoma;font-size:22pt;text-align:center"><center><span style="color:#789a3d">If this window doesn't close on its own, please close this window.</span></center></h>
+
+</BODY>
+</HTML> 
